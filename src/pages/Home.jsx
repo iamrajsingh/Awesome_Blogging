@@ -1,49 +1,62 @@
-import React, {useEffect, useState} from 'react'
-import appwriteService from "../appwrite/config"
-import { Container, PostCard, PostForm } from '../components'
-
+import React, { useEffect, useState } from "react";
+import appwriteService from "../appwrite/config";
+import { Button, Container, PostCard, PostForm } from "../components";
+import homeImage from "../assets/home_image.png";
+import { Link } from "react-router-dom";
 
 const Home = () => {
+  const [posts, setPosts] = useState([]);
 
-    const [posts, setPosts] = useState([])
+  const post = async () => {
+    await appwriteService.getPosts().then((posts) => {
+      if (posts) {
+        setPosts(posts.documents);
+      }
+    });
+  };
 
-    useEffect(()=> {
-        appwriteService.getPosts()
-        .then((posts) => {
-            if (posts) {
-                setPosts(posts.documents)
-            }
-        })
-    },[])
+  useEffect(() => {
+    post();
+  }, []);
 
-    if (posts.length === 0) {
-        return (
-            <div className="w-full py-8 mt-4 text-center">
-                <Container>
-                    <div className="flex flex-wrap">
-                        <div className="p-2 w-full">
-                            <h1 className="text-2xl font-bold hover:text-gray-500">
-                                Login to read posts
-                            </h1>
-                        </div>
-                    </div>
-                </Container>
-            </div>
-        )
-    }
-    return (
-        <div className='w-full py-8'>
-            <Container>
-                <div className='flex flex-wrap'>
-                    {posts.map((post) => (
-                        <div key={post.$id} className='p-2 w-1/4'>
-                            <PostCard {...post} />
-                        </div>
-                    ))}
-                </div>
-            </Container>
+  return (
+    <div className="relative w-full py-8 mt-50 text-center bg-bg-color  h-[800px] overflow-hidden">
+      <Container>
+        <div className="mb-40 flex flex-1 items-center justify-between h-full flex-wrap">
+          <div className="flex w-[400px]  justify-end items-start p-2 flex-col">
+            <p className="text-sm font-bold text-black-400 mb-2 font-palanquin text-white-400">
+              Exploring the Extraordinary in Everyday Life
+            </p>
+            <h1 className="text-4xl text-left font-bold text-white font-montserrat leading-[45px]">
+              Awesome Blog <br />
+              <span className="text-bold text-slate-300">
+                {" "}
+                Where Inspiration Meets
+              </span>
+            </h1>
+            {posts.length > 0 ? (
+              <Button className="bg-brown mt-4 hover:bg-brown-light hover:shadow-md">
+                <Link to="/all-posts">Explore posts</Link>{" "}
+              </Button>
+            ) : (
+              <Button className="bg-brown mt-4 hover:bg-brown-light hover:shadow-md">
+                <Link to="/signup">Signup now</Link>{" "}
+              </Button>
+            )}
+          </div>
+          <div className="absolute right-0 flex justify-end items-center h-full max-lg:">
+            <img
+              className=" img_style relative right-[-90px] max-lg:hidden"
+              src={homeImage}
+              alt="Home image"
+              height={300}
+              width={700}
+            />
+          </div>
         </div>
-    )
-}
+      </Container>
+    </div>
+  );
+};
 
-export default Home
+export default Home;
