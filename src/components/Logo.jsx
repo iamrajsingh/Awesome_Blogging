@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
 
-const Logo = ({width = "100px"}) => {
+const Logo = ({ 
+  className = "text-white text-3xl" }) => {
   return (
-    <div className='text-3xl font-extrabold text-white font-montserrat'>AwesomeBlog</div>
-  )
-}
+    <div className= {`font-extrabold  font-montserrat ${className}`} >
+      AwesomeBlog
+    </div>
+  );
+};
 
-export default Logo
+export default Logo;

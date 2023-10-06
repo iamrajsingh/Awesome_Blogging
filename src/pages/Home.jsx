@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import appwriteService from "../appwrite/config";
-import { Button, Container, PostCard, PostForm } from "../components";
+import { Button, Container} from "../components";
 import homeImage from "../assets/home_image.png";
 import { Link } from "react-router-dom";
 
@@ -23,7 +23,7 @@ const Home = () => {
     <div className="relative w-full py-8 mt-50 text-center bg-bg-color  h-[800px] overflow-hidden">
       <Container>
         <div className="mb-40 flex flex-1 items-center justify-between h-full flex-wrap">
-          <div className="flex w-[400px]  justify-end items-start p-2 flex-col">
+          <div className="flex w-[450px]  justify-end items-start p-2 flex-col">
             <p className="text-sm font-bold text-black-400 mb-2 font-palanquin text-white-400">
               Exploring the Extraordinary in Everyday Life
             </p>
