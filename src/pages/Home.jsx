@@ -20,9 +20,9 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="relative w-full py-8 mt-50 text-center bg-bg-color  h-[800px] overflow-hidden">
+    <div className="relative w-full h-screen py-8 mt-50 text-center bg-bg-color overflow-hidden">
       <Container>
-        <div className="mb-40 flex flex-1 items-center justify-between h-full flex-wrap">
+        <div className="mb-40 flex flex-1 h-screen items-center justify-between flex-wrap">
           <div className="flex w-[450px]  justify-end items-start p-2 flex-col">
             <p className="text-sm font-bold text-black-400 mb-2 font-palanquin text-white-400">
               Exploring the Extraordinary in Everyday Life

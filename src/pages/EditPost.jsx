@@ -23,12 +23,16 @@ const EditPost = () => {
     }, [slug, navigate])
 
   return post ? (
-    <div className='py-8'>
+    <div className=' w-full text-center bg-secondary h-[1000px] pt-[136px]  '>
         <Container>
             <PostForm post={post}/>
         </Container>
     </div>
-  ) : null
+  ) :(
+    <div className="h-screen flex justify-center items-center bg-secondary">
+      <h1 className="font-palanquin text-3xl font-extrabold">Loading....</h1>
+    </div>
+  )
 }
 
 export default EditPost

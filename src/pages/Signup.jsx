@@ -3,7 +3,7 @@ import {Signup as SignupComponent} from '../components';
 
 const Signup = () => {
   return (
-    <div className='py-8'><SignupComponent/></div>
+    <div className='relative w-full text-center bg-secondary h-screen '><SignupComponent/></div>
   )
 }
 

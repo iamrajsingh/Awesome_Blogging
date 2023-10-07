@@ -13,9 +13,9 @@ const AllPosts = () => {
   }, [posts]);
 
   return (
-    <div className="w-full py-8 ">
+    <div className="relative w-full text-center bg-secondary h-screen ">
       <Container>
-        <div className="flex flex-wrap">
+        <div className="relative flex flex-wrap pt-[136px] h-full">
           {posts.map((post) => (
             <div key={post.$id} className="p-2 w-1/4">
               <PostCard {...post} />

@@ -3,9 +3,12 @@ import { Container, PostForm } from "../components";
 
 const AddPost = () => {
   return (
-    <div className="py-8">
+    <div className=" w-full text-center bg-secondary h-[1000px] pt-[136px] ">
       <Container>
-        <PostForm />
+        <div className=" ">
+          <PostForm />
+        </div>
+        
       </Container>
     </div>
   );

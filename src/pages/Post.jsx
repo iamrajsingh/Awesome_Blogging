@@ -14,17 +14,21 @@ export default function Post() {
 
   const isAuthor = post && userData ? post.userId === userData.$id : false;
 
-  useEffect(() => {
+  const getPostMethod = async () => {
     if (slug) {
-      appwriteService.getPost(slug).then((post) => {
+     await appwriteService.getPost(slug).then((post) => {
         if (post) setPost(post);
         else navigate("/");
       });
     } else navigate("/");
+  }
+
+  useEffect(() => {
+    getPostMethod()
   }, [slug, navigate]);
 
-  const deletePost = () => {
-    appwriteService.deletePost(post.$id).then((status) => {
+  const deletePost = async() => {
+   await appwriteService.deletePost(post.$id).then((status) => {
       if (status) {
         appwriteService.deleteFile(post.featuredImage);
         navigate("/");
@@ -32,20 +36,26 @@ export default function Post() {
     });
   };
 
-  return post ? (
-    <div className="py-8">
-      <Container>
-        <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
+  return(
+    <div className="">
+       <div className="relative w-full text-center pb-20 bg-secondary ">
+     {
+      post ? (
+        <Container>
+        <div className="relative flex flex-wrap pt-[136px] h-full">
+
+          <div className="w-full flex flex-col justify-center items-center mb-4 rounded-xl p-2">
           <img
             src={appwriteService.getFilePreview(post.featuredImage)}
             alt={post.title}
-            className="rounded-xl"
+            width={800}
+            className="rounded-xl shadow-3xl"
           />
-
-          {isAuthor && (
-            <div className="absolute right-6 top-6">
+          
+            {isAuthor && (
+            <div className=" right-6 top-6">
               <Link to={`/edit-post/${post.$id}`}>
-                <Button bgColor="bg-green-500" className="mr-3">
+                <Button bgColor="bg-green-500" className="m-3 active:bg-green-300 hover:bg-green-400">
                   Edit
                 </Button>
               </Link>
@@ -54,12 +64,24 @@ export default function Post() {
               </Button>
             </div>
           )}
+          
+          
         </div>
         <div className="w-full mb-6">
           <h1 className="text-2xl font-bold">{post.title}</h1>
         </div>
         <div className="browser-css">{parse(post.content)}</div>
+        </div>
+        
       </Container>
+      ) : (
+        <div className="h-screen flex justify-center items-center">
+          <h1 className="font-palanquin text-3xl font-extrabold">Loading....</h1>
+        </div>
+      )
+     } 
     </div>
-  ) : null;
+    </div>
+   
+  ) 
 }

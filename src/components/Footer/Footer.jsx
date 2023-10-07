@@ -17,13 +17,14 @@ const Footer = () => {
               </p>
             </div>
           </div>
-          <div className="relative flex justify-end w-full p-6 md:pr-[64px] max-sm:justify-center md:w-1/2 lg:w-1/6">
+          <div className="grid grid-cols-4 max-sm:grid-cols-2 max-lg:w-full justify-center">
+            <div className="w-full p-6 md:w-3/12 lg:w-1/5 max-md:w-1/4">
             <div className="h-full ">
               <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-500">
                 Company
               </h3>
               <ul>
-                <li className="mb-4">
+                <li className="mb-4 w-max">
                   <Link
                     className=" text-sm font-medium text-gray-900 hover:text-gray-700"
                     to="/"
@@ -31,7 +32,7 @@ const Footer = () => {
                     Features
                   </Link>
                 </li>
-                <li className="mb-4">
+                <li className="mb-4  w-max">
                   <Link
                     className=" text-sm font-medium text-gray-900 hover:text-gray-700"
                     to="/"
@@ -39,7 +40,7 @@ const Footer = () => {
                     Pricing
                   </Link>
                 </li>
-                <li className="mb-4">
+                <li className="mb-4 w-max">
                   <Link
                     className=" text-sm font-medium text-gray-900 hover:text-gray-700"
                     to="/"
@@ -47,7 +48,7 @@ const Footer = () => {
                     Affiliate Program
                   </Link>
                 </li>
-                <li>
+                <li className=" w-max">
                   <Link
                     className=" text-sm font-medium text-gray-900 hover:text-gray-700"
                     to="/"
@@ -58,13 +59,13 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="w-full p-6 md:w-3/12 lg:w-1/6">
+          <div className="w-full p-6 md:w-3/12 lg:w-1/5 max-md:w-1/4">
             <div className="h-full">
               <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-500">
                 Support
               </h3>
               <ul>
-                <li className="mb-4">
+                <li className="mb-4  w-max">
                   <Link
                     className=" text-sm font-medium text-gray-900 hover:text-gray-700"
                     to="/"
@@ -72,7 +73,7 @@ const Footer = () => {
                     Account
                   </Link>
                 </li>
-                <li className="mb-4">
+                <li className="mb-4  w-max">
                   <Link
                     className=" text-sm font-medium text-gray-900 hover:text-gray-700"
                     to="/"
@@ -80,7 +81,7 @@ const Footer = () => {
                     Help
                   </Link>
                 </li>
-                <li className="mb-4">
+                <li className="mb-4  w-max">
                   <Link
                     className=" text-sm font-medium text-gray-900 hover:text-gray-700"
                     to="/"
@@ -88,7 +89,7 @@ const Footer = () => {
                     Contact Us
                   </Link>
                 </li>
-                <li>
+                <li className=" w-max">
                   <Link
                     className=" text-sm font-medium text-gray-900 hover:text-gray-700"
                     to="/"
@@ -99,13 +100,13 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="w-full p-6 md:w-3/12 lg:w-1/6">
+          <div className="w-full p-6 md:w-3/12 lg:w-1/5 max-md:w-1/4">
             <div className="h-full">
               <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-500">
                 Support
               </h3>
               <ul>
-                <li className="mb-4">
+                <li className="mb-4  w-max">
                   <Link
                     className="text-sm font-medium text-gray-900 hover:text-gray-700"
                     to="/"
@@ -113,7 +114,7 @@ const Footer = () => {
                     Account
                   </Link>
                 </li>
-                <li className="mb-4">
+                <li className="mb-4  w-max">
                   <Link
                     className="text-sm font-medium text-gray-900 hover:text-gray-700"
                     to="/"
@@ -121,7 +122,7 @@ const Footer = () => {
                     Help
                   </Link>
                 </li>
-                <li className="mb-4">
+                <li className="mb-4  w-max">
                   <Link
                     className=" text-sm font-medium text-gray-900 hover:text-gray-700"
                     to="/"
@@ -129,7 +130,7 @@ const Footer = () => {
                     Contact Us
                   </Link>
                 </li>
-                <li>
+                <li className=" w-max">
                   <Link
                     className=" text-sm font-medium text-gray-900 hover:text-gray-700"
                     to="/"
@@ -140,13 +141,13 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="w-full p-6 md:w-3/12 lg:w-1/6">
+          <div className="w-full p-6 md:w-3/12 lg:w-1/5 max-md:w-1/4">
             <div className="h-full">
               <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-500">
                 Legals
               </h3>
               <ul>
-                <li className="mb-4">
+                <li className="mb-4  w-max">
                   <Link
                     className=" text-sm font-medium text-gray-900 hover:text-gray-700"
                     to="/"
@@ -154,7 +155,7 @@ const Footer = () => {
                     Terms &amp; Conditions
                   </Link>
                 </li>
-                <li className="mb-4">
+                <li className="mb-4  w-max">
                   <Link
                     className=" text-sm font-medium text-gray-900 hover:text-gray-700"
                     to="/"
@@ -162,7 +163,7 @@ const Footer = () => {
                     Privacy Policy
                   </Link>
                 </li>
-                <li>
+                <li className=" w-max">
                   <Link
                     className=" text-sm font-medium text-gray-900 hover:text-gray-700"
                     to="/"
@@ -173,11 +174,13 @@ const Footer = () => {
               </ul>
             </div>
           </div>
+          </div>
+          
           
         </div>
         <div className="flex w-full relative justify-start align-bottom mt-7 mb-0">
                 <p className="text-sm text-gray-600">
-                  &copy; Copyright 2023. All Rights Reserved by DevUI.
+                  &copy; Copyright 2023. Designed by <Link className="font-bold text-blue-400" to= "https://github.com/iamrajsingh" target="blank">Divy</Link>
                 </p>
         </div>
       </div>
