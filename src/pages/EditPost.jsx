@@ -23,7 +23,7 @@ const EditPost = () => {
     }, [slug, navigate])
 
   return post ? (
-    <div className=' w-full text-center bg-secondary h-[1000px] pt-[136px]  '>
+    <div className=' w-full text-center bg-secondary h-max pt-[136px] pb-20 '>
         <Container>
             <PostForm post={post}/>
         </Container>
