@@ -4,7 +4,7 @@ import authService from "../../appwrite/auth";
 import { logout } from "../../store/authSlice";
 import { useNavigate } from "react-router-dom";
 
-const LogoutBtn = () => {
+const LogoutBtn = ({design = "text-white hover:bg-blue-100 hover:shadow-lg rounded-full hover:text-black"}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -17,7 +17,7 @@ const LogoutBtn = () => {
 
   return (
     <button
-      className="inline-block px-6 py-2 duration-[500] hover:bg-blue-100 hover:shadow-lg rounded-full text-white font-bold text-md font-montserrat hover:text-black"
+      className={`inline-block px-6 py-2 duration-[500]  ${design} font-bold text-md font-montserrat `}
       onClick={logoutHandler}
     >
       Logout
