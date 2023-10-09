@@ -3,7 +3,7 @@ import { Login as LoginComponent } from "../components";
 
 const Login = () => {
   return (
-    <div className="relative w-full text-center bg-secondary h-screen ">
+    <div className="flex items-center justify-center w-full text-center bg-secondary h-screen">
       <LoginComponent />
     </div>
   );

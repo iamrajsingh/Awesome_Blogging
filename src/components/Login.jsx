@@ -27,14 +27,11 @@ const Login = () => {
   };
 
   return (
-    <div className="mt-20 absolute flex items-center justify-center w-full">
+    <div className=" mt-20 absolute flex items-center justify-center w-full">
       <div
-        className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}
+        className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 shadow-lg `}
       >
         <div className="mb-2 flex justify-center">
-          <span className="inline-block w-full max-w-[100px]">
-            <Logo width="100%" />
-          </span>
         </div>
         <h2 className="text-center text-2xl font-bold leading-tight">
           Sign in to your account
@@ -43,7 +40,7 @@ const Login = () => {
           ' Don&apos;t have any account?&nbsp;
           <Link
             to="/signup"
-            className="font-medium text-primary transition-all duration-200 hover:underline"
+            className="font-medium text-blue-500 transition-all duration-200 hover:underline"
           >
             Sign up
           </Link>
@@ -72,7 +69,7 @@ const Login = () => {
                 required: true,
               })}
             />
-            <Button type="submit" className="w-full">
+            <Button type="submit" className="hover:bg-blue-500 active:bg-blue-700">
               Sign in
             </Button>
           </div>
