@@ -27,7 +27,7 @@ const PostForm = ({ post }) => {
         : null;
 
       if (file) {
-        appwriteService.deleteFile(post.featuredImage);
+       await appwriteService.deleteFile(post.featuredImage);
       }
 
       const dbPost = await appwriteService.updatePost(post.$id, {

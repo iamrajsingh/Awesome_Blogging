@@ -10,8 +10,8 @@ function App() {
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    authService
+  const gettingCurrentUser = async() => {
+   await authService
       .getCurrentUser()
       .then((userData) => {
         if (userData) {
@@ -23,6 +23,10 @@ function App() {
         }
       })
       .finally(() => setLoading(false));
+  }
+
+  useEffect(() => {
+    gettingCurrentUser()
   }, []);
 
   return !loading ? (

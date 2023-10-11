@@ -27,7 +27,7 @@ export default function Post() {
     getPostMethod()
   }, [slug, navigate]);
 
-  const deletePost = async() => {
+  const deletePost = async () => {
    await appwriteService.deletePost(post.$id).then((status) => {
       if (status) {
         appwriteService.deleteFile(post.featuredImage);
@@ -35,6 +35,8 @@ export default function Post() {
       }
     });
   };
+
+
 
   return(
     <div className="">

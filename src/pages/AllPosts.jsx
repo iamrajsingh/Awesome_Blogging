@@ -4,13 +4,18 @@ import { PostCard, Container } from "../components";
 
 const AllPosts = () => {
   const [posts, setPosts] = useState([]);
-  useEffect(() => {
-    appwriteService.getPosts([]).then((posts) => {
+
+  const gettingPost = async () => {
+   await appwriteService.getPosts([]).then((posts) => {
       if (posts) {
         setPosts(posts.documents);
       }
     });
-  }, [posts]);
+  }
+
+  useEffect(() => {
+    gettingPost()
+  }, []);
 
   return (
     <div className="w-full text-center bg-secondary h-screen ">
